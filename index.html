@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1><u>Tic Tac Toe Game</u></h1>
+
+    <div class="game">
+        <input type="button" class="btn" id="btn1" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn2" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn3" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn4" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn5" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn6" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn7" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn8" value="" onclick="myClick(this)">
+        <input type="button" class="btn" id="btn9" value="" onclick="myClick(this)">
+        <br><br>
+        <input type="reset" value="Reset" id="reset" onclick="resetClick()">
+
+    </div>
+
+    <script>
+
+        cnt = 0
+
+        function myClick(e) {
+            var btn = document.getElementById(e.id).value
+            if (btn == "") {
+                document.getElementById(e.id).value = (cnt % 2 == 0) ? 'X' : 'O'
+                cnt++
+            }
+
+            b1 = document.getElementById('btn1').value
+            b2 = document.getElementById('btn2').value
+            b3 = document.getElementById('btn3').value
+            b4 = document.getElementById('btn4').value
+            b5 = document.getElementById('btn5').value
+            b6 = document.getElementById('btn6').value
+            b7 = document.getElementById('btn7').value
+            b8 = document.getElementById('btn8').value
+            b9 = document.getElementById('btn9').value
+
+
+            if (b1 == 'X' && b2 == "X" && b3 == "X" || b4 == 'X' && b5 == "X" && b6 == "X" || b7 == 'X' && b8 == "X" && b9 == "X" || b1 == 'X' && b4 == "X" && b7 == "X" || b2 == 'X' && b5 == "X" && b8 == "X" || b3 == 'X' && b6 == "X" && b9 == "X" || b1 == 'X' && b5 == "X" && b9 == "X" || b3 == 'X' && b5 == "X" && b7 == "X") {
+                alert("congrats!!🎉 X is Winn!!🙌")
+            }
+            else if (b1 == 'O' && b2 == "O" && b3 == "O" || b4 == 'O' && b5 == "O" && b6 == "O" || b7 == 'O' && b8 == "O" && b9 == "O" || b1 == 'O' && b4 == "O" && b7 == "O" || b2 == 'O' && b5 == "O" && b8 == "O" || b3 == 'O' && b6 == "O" && b9 == "O" || b1 == 'O' && b5 == "O" && b9 == "O" || b3 == 'O' && b5 == "O" && b7 == "O") {
+                alert("congrats!!🎉 O is Winn!!🙌")
+            }
+
+        }
+
+        function resetClick(){
+            location.reload()
+        }
+
+    </script>
+
+</body>
+
+</html>
